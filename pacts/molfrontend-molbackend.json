@@ -1,0 +1,49 @@
+{
+  "consumer": {
+    "name": "MOLFrontend"
+  },
+  "provider": {
+    "name": "MOLBackend"
+  },
+  "interactions": [
+    {
+      "description": "A request for content that doesn't exist",
+      "providerState": "default",
+      "request": {
+        "method": "GET",
+        "path": "/content/non_existent_key"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "body": "No content was found"
+        }
+      }
+    },
+    {
+      "description": "A request for content",
+      "providerState": "default",
+      "request": {
+        "method": "GET",
+        "path": "/content/dashboard_greeting"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "body": "Welcome to the dashboard"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
